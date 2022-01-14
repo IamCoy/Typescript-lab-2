@@ -2,11 +2,11 @@ import { Greeter } from "./greeter";
 
 export class HtmlGreeter extends Greeter {
     
-    tagName:string = "h1"
+    tagName:string | undefined
 
-    constructor(greeting:string, tagName?: string){
+    constructor(greeting:string, tagName: string = "h1"){
         super(greeting)
-        this.tagName = tagName;
+        this.tagName = tagName
     }
     
 
@@ -15,5 +15,5 @@ export class HtmlGreeter extends Greeter {
     }
 }
 
-const hi = new HtmlGreeter("hiii", "h2")
+const hi = new HtmlGreeter("hiii")
 console.log(hi.greet("JaCoyia"))
